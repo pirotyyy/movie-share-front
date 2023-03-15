@@ -1,0 +1,118 @@
+<div class="edit-wrapper">
+  <div class="container">
+    <h1 class="title">EDIT</h1>
+    <ng-container *ngIf="errors.length > 0">
+      <ng-container *ngFor="let error of errors">
+        <span class="error-message">{{ error }} </span>
+      </ng-container>
+    </ng-container>
+    <div class="form-wrapper">
+      <form [formGroup]="editForm">
+        <div class="form-group">
+          <label for="post_title">POST TITLE</label>
+          <input
+            id="post_title"
+            type="text"
+            formControlName="post_title"
+            placeholder="ENTER POST TITLE"
+            [ngClass]="{ 'alert-danger': v.posttitleInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.posttitleInvalid">
+            <ng-container *ngIf="v.posttitleHasErrorRequired">
+              <span class="error-message">※ 投稿タイトルは必須です。</span>
+            </ng-container>
+            <ng-container *ngIf="v.posttitleHasErrorMaxLength">
+              <span class="error-message">※ 最大50字までです。</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="author">AUTHOR</label>
+          <input
+            id="author"
+            type="text"
+            formControlName="author"
+            placeholder="ENTER YOUR USERNAME"
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="movie">MOVIE TITLE</label>
+          <input
+            id="movie"
+            type="text"
+            formControlName="movie"
+            placeholder="ENTER MOVIE TITLE"
+            [ngClass]="{ 'alert-danger': v.movieInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.movieInvalid">
+            <ng-container *ngIf="v.movieHasErrorRequired">
+              <span class="error-message">※ 映画名は必須です。</span>
+            </ng-container>
+            <ng-container *ngIf="v.movieHasErrorMaxLength">
+              <span class="error-message">※ 最大100字までです。</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="evaluation">EVALUATION</label>
+          <input
+            id="evaluation"
+            type="number"
+            formControlName="evaluation"
+            [ngClass]="{ 'alert-danger': v.evaluationInvalid }"
+            required
+          />
+        </div>
+        <div class="error-messages" *ngIf="v.evaluationInvalid">
+          <ng-container *ngIf="v.evaluationHasErrorRequired">
+            <span class="error-message">※ 評価は必須です。</span>
+          </ng-container>
+          <ng-container
+            *ngIf="v.evaluationHasErrorMax || v.evaluationHasErrorMin"
+          >
+            <span class="error-message"
+              >※ 1から5の5段階で評価してください。</span
+            >
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="impression">IMPRESSION</label>
+          <textarea
+            id="impression"
+            cols="66"
+            rows="15"
+            formControlName="impression"
+            placeholder="ENTER YOUR IMPRESSION"
+            [ngClass]="{ 'alert-danger': v.impressionInvalid }"
+            required
+          ></textarea>
+          <div class="error-messages" *ngIf="v.impressionInvalid">
+            <ng-container *ngIf="v.impressionHasErrorRequired">
+              <span class="error-message">※ 感想は必須です。</span>
+            </ng-container>
+            <ng-container *ngIf="v.impressionHasErrorManLength">
+              <span class="error-message">※ 最大2000字までです。</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="btn-group">
+          <input
+            value="DELETE"
+            class="delete-btn"
+            type="submit"
+            (click)="delete()"
+          />
+          <input
+            value="SUBMIT"
+            class="submit-btn"
+            type="submit"
+            (click)="update()"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

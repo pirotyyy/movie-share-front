@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <div class="header-left">
+      <ng-container *ngIf="!auth.isAuthenticated()">
+        <a class="title" routerLink="">MOVIESHARE</a>
+      </ng-container>
+      <ng-container *ngIf="auth.isAuthenticated()">
+        <a class="title" routerLink="mypage/">MOVIESHARE</a>
+      </ng-container>
+    </div>
+    <div class="header-right">
+      <ng-container *ngIf="!auth.isAuthenticated()">
+        <a class="home" routerLink="">HOME</a>
+        <a class="register" routerLink="/auth/register">REGISTER</a>
+        <a class="login" routerLink="/auth/login">LOGIN</a>
+      </ng-container>
+      <ng-container *ngIf="auth.isAuthenticated()">
+        <a class="myposts" routerLink="/mypage">MYPOSTS</a>
+        <a class="post" routerLink="/post/list">POSTS</a>
+        <a class="create" routerLink="/post/create">CREATE</a>
+        <a class="logout" (click)="logout()">LOGOUT</a>
+      </ng-container>
+    </div>
+  </div>
+</header>

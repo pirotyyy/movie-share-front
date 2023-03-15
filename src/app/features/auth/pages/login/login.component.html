@@ -1,0 +1,52 @@
+<div class="login-wrapper">
+  <div class="container">
+    <h1 class="title">LOGIN</h1>
+    <ng-container *ngIf="errors.length > 0">
+      <ng-container *ngFor="let error of errors">
+        <span class="error-message">{{ error }} </span>
+      </ng-container>
+    </ng-container>
+    <div class="form-wrapper">
+      <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <div class="form-group">
+          <label for="username">USERNAME</label>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            placeholder="ENTER YOUR USERNAME"
+            [ngClass]="{ 'alert-danger': v.usernameInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.usernameInvalid">
+            <ng-container *ngIf="v.usernameHasErrorRequired">
+              <span class="error-message">※ ユーザー名は必須です。</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">PASSWORD</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="ENTER YOUR PASSWORD"
+            [ngClass]="{ 'alert-danger': v.passwordInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.passwordInvalid">
+            <ng-container *ngIf="v.passwordHasErrorRequired">
+              <span class="error-message">※ パスワードは必須です。</span>
+            </ng-container>
+          </div>
+        </div>
+        <input
+          type="submit"
+          class="submit-btn"
+          value="SUBMIT"
+          [disabled]="v.usernameInvalid || v.passwordInvalid"
+        />
+      </form>
+    </div>
+  </div>
+</div>

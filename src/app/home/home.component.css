@@ -1,0 +1,62 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  width: 1000px;
+  padding: 50px 100px;
+  margin: 0 auto;
+  background-color: rgb(242, 242, 242);
+}
+
+.top-wrapper {
+  padding: 230px 0 230px 0;
+  color: rgb(0, 0, 0);
+  background-size: cover;
+  background-color: rgb(229, 229, 229);
+  text-align: center;
+}
+
+.top-wrapper h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.top-wrapper p {
+  font-size: 20px;
+}
+
+.btn {
+  padding: 8px 24px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.register {
+  width: 130px;
+  border: 2px solid black;
+  border-radius: 0;
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
+
+.register:hover {
+  background-color: rgb(242, 242, 242);
+  color: black
+}
+
+.login {
+  width: 130px;
+  border: 2px solid black;
+  border-radius: 0;
+  transition: all 0.5s;
+}
+
+.login:hover {
+  background-color: black;
+  color: white;
+}

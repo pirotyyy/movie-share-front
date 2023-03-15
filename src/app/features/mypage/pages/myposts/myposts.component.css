@@ -1,0 +1,102 @@
+.list-wrapper {
+  overflow: auto;
+}
+
+.container {
+  padding: 50px 100px;
+}
+
+.title {
+  margin-top: 65px;
+  padding: 80px 30px;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: rgb(242, 242, 242);
+}
+
+.list-wrapper {
+  padding-bottom: 80px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  color: black
+}
+
+.card {
+  width: 400px;
+  height: 300px;
+  margin: 10px 15px;
+  background-color: white;
+  box-shadow: 0px 5px 15px -5px #777777;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.card:hover {
+  box-shadow: none;
+}
+
+.card-top {
+  position: relative;
+  margin: 15px 15px 0 15px;
+}
+
+.card-title {
+  padding: 15px 0 0 0;
+  margin: 0;
+  font-size: 24px;
+}
+
+.card-main {
+  position: relative;
+  margin: 5px 15px 15px 15px;
+  padding: 0;
+}
+
+.card-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.author {
+  font-weight: 600;
+  color: rgba(75, 75, 75, 0.671);
+  margin: 5px 0 0 0;
+}
+
+.movie {
+  margin-top: 5px;
+  margin-bottom: 0;
+  padding: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+hr {
+  margin: 3px;
+  border-top: 2px solid rgb(131, 131, 131);
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+}
+
+.eval {
+  display: flex;
+}
+
+.star {
+  color: rgb(224, 224, 0);
+}

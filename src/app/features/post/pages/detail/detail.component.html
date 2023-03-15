@@ -1,0 +1,25 @@
+<div class="detail-wrapper">
+  <div class="container">
+    <h1 class="post-title">{{ post.post_title }}</h1>
+    <div class="author">
+      <p>{{ post.author }}</p>
+    </div>
+    <div class="movie">
+      <p>{{ post.movie }}</p>
+    </div>
+    <div class="eval">
+      <div *ngFor="let star of arrayNumberLength(post.evaluation)" class="star">
+        <div class="material-symbols-outlined" style="color: rgb(224, 224, 0)">
+          star
+        </div>
+      </div>
+    </div>
+
+    <div class="impression">
+      {{ post.impression }}
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <a class="btn" routerLink="/post/list">RETURN</a>
+  </div>
+</div>

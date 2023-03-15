@@ -1,0 +1,59 @@
+.detail-wrapper {
+  margin-top: 65px;
+  padding: 100px 100px;
+  align-items: center;
+}
+
+.container {
+  background-color: rgb(242, 242, 242);
+  padding: 30px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.post-title {
+  font-weight: 600px;
+}
+
+.author {
+  font-size: 32px;
+  margin: 0px;
+}
+
+.movie {
+  margin: 0px;
+}
+
+.star {
+  display: inline;
+  margin-bottom: 5px;
+}
+
+.eval {
+  border-bottom: 3px solid rgb(226, 226, 226);
+}
+
+.impression {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.btn-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn {  
+  padding: 10px 30px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  outline: 2px solid black;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}

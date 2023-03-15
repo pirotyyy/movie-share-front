@@ -1,0 +1,81 @@
+<div class="register-wrapper">
+  <div class="container">
+    <h1 class="title">REGISTER</h1>
+    <ng-container *ngIf="errors.length > 0">
+      <ng-container *ngFor="let error of errors">
+        <span class="error-message">{{ error }} </span>
+      </ng-container>
+    </ng-container>
+    <div class="form-wrapper">
+      <form
+        (ngSubmit)="register()"
+        [formGroup]="registerForm"
+        #formCheck="ngForm"
+      >
+        <div class="form-group">
+          <label for="username">USERNAME</label>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            placeholder="ENTER YOUR USERNAME"
+            [ngClass]="{ 'alert-danger': v.usernameInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.usernameInvalid">
+            <ng-container *ngIf="v.usernameHasErrorRequired">
+              <span class="error-message">※ ユーザー名は必須です。</span>
+            </ng-container>
+            <ng-container *ngIf="v.usernameHasErrorMaxLength">
+              <span class="error-message">※ ユーザー名は最大30字です。</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="ENTER YOUR USERNAME"
+            [ngClass]="{ 'alert-danger': v.emailInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.emailInvalid">
+            <ng-container *ngIf="v.emailHasErrorRequired">
+              <span class="error-message">※ Eメールは必須です。</span>
+            </ng-container>
+            <ng-container *ngIf="v.emailHasErrorPattern">
+              <span class="error-message">※ 形式が正しくありません</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">PASSWORD</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="ENTER YOUR PASSWORD"
+            [ngClass]="{ 'alert-danger': v.passwordInvalid }"
+            required
+          />
+          <div class="error-messages" *ngIf="v.passwordInvalid">
+            <ng-container *ngIf="v.passwordHasErrorRequired">
+              <span class="error-message">※ パスワードは必須です。</span>
+            </ng-container>
+            <ng-container *ngIf="v.passwordHasErrorMinLength">
+              <span class="error-message">※ パスワードは最低6字です。</span>
+            </ng-container>
+          </div>
+        </div>
+        <input
+          type="submit"
+          class="submit-btn"
+          value="SUBMIT"
+          [disabled]="v.usernameInvalid || v.emailInvalid || v.passwordInvalid"
+        />
+      </form>
+    </div>
+  </div>
+</div>
