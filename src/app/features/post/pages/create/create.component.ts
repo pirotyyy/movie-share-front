@@ -24,7 +24,7 @@ export class CreateComponent implements OnInit {
       Validators.required,
       Validators.maxLength(100),
     ]),
-    evaluation: new FormControl(0, [
+    evaluation: new FormControl(5, [
       Validators.required,
       Validators.min(1),
       Validators.max(5),
