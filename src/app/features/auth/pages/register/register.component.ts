@@ -49,7 +49,7 @@ export class RegisterComponent implements OnInit {
           this.errors = [];
         }
         this.errors.push(error.error.detail);
-        this.router.navigate(['/auth/login']);
+        this.router.navigate(['/auth/register']);
       },
     });
   }
